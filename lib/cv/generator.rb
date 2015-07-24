@@ -1,0 +1,1 @@
+require 'cv/generator/version'

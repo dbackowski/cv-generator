@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <% @css_paths.each do |css_path| %>
+      <link href="<%= css_path %>" rel="stylesheet">
+    <% end %>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h2 class="well"><%= @general['first_name'] %> <%= @general['last_name'] %></h2>
+
+        <dl class="dl-horizontal">
+          <dt>Data urodzenia</dt>
+          <dd><%= @general['birth_date'] %></dd>
+          <dt>Adres zamieszkania</dt>
+          <dd><%= @general['address'] %></dt>
+          <dt>Telefon</dt>
+          <dd><%= @general['email'] %></dd>
+          <dt>E-mail</dt>
+          <dd><%= @general['phone'] %></dd>
+
+          <% @general['websites'].each do |name, url| %>
+            <dt><%= name %></dt>
+            <dd><a href="<%= url %>"><%= url %></a></dd>
+          <% end %>
+        </dl>
+      </div>
+
+      <div class="row">
+        <h4>Wykształcenie</h4>
+        <table class="table">
+          <tbody>
+            <% @education.each do |education| %>
+              <tr>
+                <td><%= education['name'] %></td>
+                <td><%= education['interval'] %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="row">
+        <h4>Doświadczenie</h4>
+        <table class="table">
+          <tbody>
+            <% @jobs.each do |job| %>
+              <tr>
+                <td><%= job['name'] %></td>
+                <td><%= job['interval'] %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="row">
+        <h4>Ważniejsze projekty</h4>
+        <ul>
+        <% @projects.each do |project| %>
+          <li><%= project %></li>
+        <% end %>
+        </ul>
+      </div>
+
+      <div class="row">
+        <h4>Umiejętności</h4>
+        <ul>
+        <% @skills.each do |skill| %>
+          <li><%= skill %></li>
+        <% end %>
+        </ul>
+      </div>
+
+      <div class="row">
+        <h4>Inne</h4>
+        <ul>
+        <% @other_skills.each do |skill| %>
+          <li><%= skill %></li>
+        <% end %>
+        </ul>
+      </div>
+  </div>
+  <body>
+</html>
+
+
+
+
+
+
+
