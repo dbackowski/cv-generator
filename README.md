@@ -40,7 +40,7 @@ projects:
   - projekt nr 2
 ```
 
-    cv_generator --from cv.yml
+    cv-generator --from cv.yml
 
 
 ## Contributing

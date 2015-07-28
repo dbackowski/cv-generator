@@ -5,7 +5,7 @@ require 'cv/generator/pdf'
 require 'thor'
 
 class CvGenerator < Thor
-  desc 'cv_generate --from YAML_FILE', 'Generate CV in PDF format'
+  desc 'cv-generator --from YAML_FILE', 'Generate CV in PDF format'
   option :from, required: true
   def generate
     pdf = Pdf.new(options[:from])
